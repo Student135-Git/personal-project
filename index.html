@@ -9,8 +9,10 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <main class="container">
-      <header class="card">
+   <main class="container">
+  <header class="hero">
+    <div class="hero-card">
+      <p class="badge">Portfolio</p>
         <h1>Aldrich Bertram</h1>
         <p class="subtitle"> Hi, I’m Aldrich. I’m a student learning web development and building projects
     with HTML, CSS, and JavaScript. I enjoy creating clean, simple interfaces
@@ -23,29 +25,50 @@
         </div>
       </header>
 
-      <section class="card">
-        <h2>Projects</h2>
-        <ul class="list">
-          <li>
-            <strong>Project 1</strong> — one sentence.
-            <a href="#" target="_blank" rel="noreferrer">Demo</a>
-            ·
-            <a href="#" target="_blank" rel="noreferrer">Code</a>
-          </li>
-          <li>
-            <strong>Project 2</strong> — one sentence.
-            <a href="#" target="_blank" rel="noreferrer">Demo</a>
-            ·
-            <a href="#" target="_blank" rel="noreferrer">Code</a>
-          </li>
-        </ul>
-      </section>
+       <section class="grid">
+    <section class="card">
+      <h2>About</h2>
+      <p>
+        Hi, I’m Aldrich. I’m learning web development and building projects with
+        HTML, CSS, and JavaScript. I enjoy clean UI and improving step by step.
+      </p>
+    </section>
 
-      <footer class="footer">
-        <small>© <span id="year"></span> Your Name</small>
-      </footer>
-    </main>
+    <section class="card">
+      <h2>Skills</h2>
+      <div class="tags">
+        <span class="tag">HTML</span>
+        <span class="tag">CSS</span>
+        <span class="tag">JavaScript</span>
+        <span class="tag">GitHub</span>
+      </div>
+    </section>
+  </section>
 
-    <script src="script.js"></script>
-  </body>
-</html>
+  <section class="card">
+    <h2>Projects</h2>
+    <div class="projects">
+      <article class="project">
+        <h3>Personal Website</h3>
+        <p>My first portfolio site built with HTML/CSS/JS and deployed on GitHub Pages.</p>
+        <div class="project-links">
+          <a href="https://student135-git.github.io/personal-project/" target="_blank" rel="noreferrer">Demo</a>
+          <a href="https://github.com/Student135-Git/personal-project" target="_blank" rel="noreferrer">Code</a>
+        </div>
+      </article>
+
+      <article class="project">
+        <h3>Project 2</h3>
+        <p>One sentence about what it does.</p>
+        <div class="project-links">
+          <a href="#" target="_blank" rel="noreferrer">Demo</a>
+          <a href="#" target="_blank" rel="noreferrer">Code</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <small>© <span id="year"></span> Aldrich</small>
+  </footer>
+</main>
