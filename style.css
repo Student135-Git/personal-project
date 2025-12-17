@@ -346,3 +346,13 @@ a {
   margin-top: 6px;
   font-size: 14px;
 }
+
+/* Shuffle text */
+.shuffle {
+  display: inline-block;
+  letter-spacing: 0.02em;
+}
+
+.shuffle.is-shuffling {
+  text-shadow: 0 0 18px rgba(168, 209, 255, 0.25);
+}
