@@ -138,33 +138,28 @@
         <h2>Contact</h2>
         <p>If you want to collaborate or have a question, feel free to message me.</p>
 
-        <form
-          class="contact"
-          action="mailto:aldrichbt@gmail.com"
-          method="post"
-          enctype="text/plain"
-        >
-          <label>
-            <span>Name</span>
-            <input type="text" name="name" placeholder="Your name" required />
-          </label>
+       <form id="contactForm" class="contact">
+  <label>
+    <span>Name</span>
+    <input name="name" type="text" placeholder="Your name" required />
+  </label>
 
-          <label>
-            <span>Email</span>
-            <input type="email" name="email" placeholder="you@email.com" required />
-          </label>
+  <label>
+    <span>Email</span>
+    <input name="email" type="email" placeholder="you@email.com" required />
+  </label>
 
-          <label class="full">
-            <span>Message</span>
-            <textarea name="message" rows="5" placeholder="Your message..." required></textarea>
-          </label>
+  <label class="full">
+    <span>Message</span>
+    <textarea name="message" rows="5" placeholder="Your message..." required></textarea>
+  </label>
 
-          <div class="full">
-            <button class="btn" type="submit">Send</button>
-          </div>
-        </form>
-      </section>
+  <div class="full">
+    <button class="btn" type="submit">Send</button>
+  </div>
 
+  <p id="contactStatus" class="status full" aria-live="polite"></p>
+</form>
       <!-- FOOTER -->
       <footer class="footer">
         <small>© <span id="year"></span> Aldrich Bertram</small>
