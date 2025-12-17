@@ -1,5 +1,4 @@
 document.getElementById("year").textContent = new Date().getFullYear();
-document.getElementById("year").textContent = new Date().getFullYear();
 
 const SCRIPT_URL =
   "https://script.google.com/macros/s/AKfycbwm9005jtQjDHfkkZP-WlkoOvZmn8Cz764a6K26dnI4rRRT3NREVmIT8_q7c2RWaHGC/exec";
@@ -7,7 +6,7 @@ const SCRIPT_URL =
 const form = document.getElementById("contactForm");
 const statusEl = document.getElementById("contactStatus");
 
-if (form) {
+if (form && statusEl) {
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
 
@@ -22,17 +21,16 @@ if (form) {
     };
 
     try {
-      const res = await fetch(SCRIPT_URL, {
+      await fetch(SCRIPT_URL, {
         method: "POST",
+        mode: "no-cors",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
       });
 
-      const text = await res.text(); // Apps Script sometimes returns text
-      // We won't rely on parsing here; if fetch didn't throw, show success.
+      // With no-cors, we can't read the response. If it didn't throw, assume success.
       statusEl.textContent = "✅ Sent! Thanks for reaching out.";
       form.reset();
-      console.log("Apps Script response:", text);
     } catch (err) {
       statusEl.textContent =
         "❌ Could not send. Please try again later or email me directly.";
