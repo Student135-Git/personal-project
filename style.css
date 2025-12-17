@@ -342,3 +342,7 @@ a {
   position: relative;
   z-index: 2;
 }
+.status {
+  margin-top: 6px;
+  font-size: 14px;
+}
