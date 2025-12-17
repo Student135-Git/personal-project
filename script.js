@@ -1,7 +1,7 @@
 document.getElementById("year").textContent = new Date().getFullYear();
 
 const SCRIPT_URL =
-  "https://script.google.com/macros/s/AKfycbwm9005jtQjDHfkkZP-WlkoOvZmn8Cz764a6K26dnI4rRRT3NREVmIT8_q7c2RWaHGC/exec";
+  "https://script.google.com/macros/s/AKfycbxeNadm44QlFtHZSTNJKppQR6SkGwCK4ThI5fYpPHkWSL7dah3Qyi4S84h3VgX3cZ-9/exec;
 
 const form = document.getElementById("contactForm");
 const statusEl = document.getElementById("contactStatus");
