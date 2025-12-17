@@ -304,3 +304,41 @@ a {
   z-index: 2;
 }
 
+/* ===== Hero Background Image (apply to hero-card) ===== */
+.hero-card.hero-bg {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Background image layer */
+.hero-card.hero-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("hero-bg.jpg");
+  background-size: cover;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  opacity: 0.35;
+  z-index: 0;
+}
+
+/* Dark overlay for readability */
+.hero-card.hero-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(11, 16, 32, 0.88) 0%,
+    rgba(11, 16, 32, 0.65) 50%,
+    rgba(11, 16, 32, 0.45) 100%
+  );
+  z-index: 1;
+}
+
+/* Keep hero content above background */
+.hero-card.hero-bg > * {
+  position: relative;
+  z-index: 2;
+}
