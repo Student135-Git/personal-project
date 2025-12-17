@@ -179,3 +179,46 @@ a {
   text-align: center;
   padding: 8px 0;
 }
+
+.contact {
+  margin-top: 14px;
+  display: grid;
+  gap: 12px;
+}
+
+.contact label {
+  display: grid;
+  gap: 6px;
+}
+
+.contact span {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.contact input,
+.contact textarea {
+  width: 100%;
+  padding: 12px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: rgba(0, 0, 0, 0.18);
+  color: var(--text);
+  outline: none;
+}
+
+.contact input:focus,
+.contact textarea:focus {
+  border-color: rgba(168, 209, 255, 0.5);
+}
+
+.contact .full {
+  grid-column: 1 / -1;
+}
+
+@media (min-width: 840px) {
+  .contact {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+}
