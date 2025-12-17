@@ -59,7 +59,7 @@ if (form && statusEl) {
     const finalText = el.dataset.text || el.textContent || "";
     const charset =
       el.dataset.charset || "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-    const duration = Number(el.dataset.duration || 650);
+    const duration = Number(el.dataset.duration || 10000);
 
     const start = performance.now();
     el.classList.add("is-shuffling");
