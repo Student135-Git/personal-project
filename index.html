@@ -3,72 +3,117 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Aldrich Bertram | Portofolio</title>
-    <h1>Aldrich</h1>
-<p class="subtitle">Student • Aspiring Web Developer</p>
+    <title>Aldrich Bertram | Portfolio</title>
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
-   <main class="container">
-  <header class="hero">
-    <div class="hero-card">
-      <p class="badge">Portfolio</p>
-        <h1>Aldrich Bertram</h1>
-        <p class="subtitle"> Hi, I’m Aldrich. I’m a student learning web development and building projects
-    with HTML, CSS, and JavaScript. I enjoy creating clean, simple interfaces
-    and improving my skills step by step.</p>
 
-        <div class="links">
-          <a href="https://github.com/student135-Git" target="_blank" rel="noreferrer">GitHub</a>
-          <a href="https://www.linkedin.com/in/aldrich-bertram-tjuwondo-4877a72b2/" target="_blank" rel="noreferrer">LinkedIn</a>
-          <a href="mailto:aldrichbt@gmail.com">Email</a>
+  <body>
+    <main class="container">
+      <!-- HERO -->
+      <header class="hero">
+        <div class="hero-card">
+          <p class="badge">Portfolio</p>
+          <h1>Aldrich Bertram</h1>
+          <p class="subtitle">
+            Student • Aspiring Web Developer
+          </p>
+
+          <div class="links">
+            <a class="btn" href="https://github.com/Student135-Git" target="_blank" rel="noreferrer">GitHub</a>
+            <a class="btn" href="https://www.linkedin.com/in/aldrich-bertram-tjuwondo-4877a72b2/" target="_blank" rel="noreferrer">LinkedIn</a>
+            <a class="btn" href="mailto:aldrichbt@gmail.com">Email</a>
+          </div>
         </div>
       </header>
 
-       <section class="grid">
-    <section class="card">
-      <h2>About</h2>
-      <p>
-        Hi, I’m Aldrich. I’m learning web development and building projects with
-        HTML, CSS, and JavaScript. I enjoy clean UI and improving step by step.
-      </p>
-    </section>
+      <!-- ABOUT + SKILLS -->
+      <section class="grid">
+        <section class="card">
+          <h2>About</h2>
+          <p>
+            Hi, I’m Aldrich. I’m a student learning web development and building
+            projects with HTML, CSS, and JavaScript. I enjoy creating clean,
+            simple interfaces and improving my skills step by step.
+          </p>
+        </section>
 
-    <section class="card">
-      <h2>Skills</h2>
-      <div class="tags">
-        <span class="tag">HTML</span>
-        <span class="tag">CSS</span>
-        <span class="tag">JavaScript</span>
-        <span class="tag">GitHub</span>
-      </div>
-    </section>
-  </section>
+        <section class="card">
+          <h2>Skills</h2>
+          <div class="tags">
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">GitHub</span>
+          </div>
+        </section>
+      </section>
 
-  <section class="card">
-    <h2>Projects</h2>
-    <div class="projects">
-      <article class="project">
-        <h3>Personal Website</h3>
-        <p>My first portfolio site built with HTML/CSS/JS and deployed on GitHub Pages.</p>
-        <div class="project-links">
-          <a href="https://student135-git.github.io/personal-project/" target="_blank" rel="noreferrer">Demo</a>
-          <a href="https://github.com/Student135-Git/personal-project" target="_blank" rel="noreferrer">Code</a>
+      <!-- PROJECTS -->
+      <section class="card">
+        <h2>Projects</h2>
+        <div class="projects">
+          <article class="project">
+            <h3>Personal Website</h3>
+            <p>
+              My first portfolio site built with HTML, CSS, and JavaScript and
+              deployed using GitHub Pages.
+            </p>
+            <div class="project-links">
+              <a href="https://student135-git.github.io/personal-project/" target="_blank" rel="noreferrer">Demo</a>
+              <a href="https://github.com/Student135-Git/personal-project" target="_blank" rel="noreferrer">Code</a>
+            </div>
+          </article>
+
+          <article class="project">
+            <h3>Project 2</h3>
+            <p>One sentence about what it does.</p>
+            <div class="project-links">
+              <a href="#" target="_blank" rel="noreferrer">Demo</a>
+              <a href="#" target="_blank" rel="noreferrer">Code</a>
+            </div>
+          </article>
         </div>
-      </article>
+      </section>
 
-      <article class="project">
-        <h3>Project 2</h3>
-        <p>One sentence about what it does.</p>
-        <div class="project-links">
-          <a href="#" target="_blank" rel="noreferrer">Demo</a>
-          <a href="#" target="_blank" rel="noreferrer">Code</a>
-        </div>
-      </article>
-    </div>
-  </section>
+      <!-- CONTACT -->
+      <section class="card">
+        <h2>Contact</h2>
+        <p>If you want to collaborate or have a question, feel free to message me.</p>
 
-  <footer class="footer">
-    <small>© <span id="year"></span> Aldrich</small>
-  </footer>
-</main>
+        <form
+          class="contact"
+          action="mailto:aldrichbt@gmail.com"
+          method="post"
+          enctype="text/plain"
+        >
+          <label>
+            <span>Name</span>
+            <input type="text" name="name" placeholder="Your name" required />
+          </label>
+
+          <label>
+            <span>Email</span>
+            <input type="email" name="email" placeholder="you@email.com" required />
+          </label>
+
+          <label class="full">
+            <span>Message</span>
+            <textarea name="message" rows="5" placeholder="Your message..." required></textarea>
+          </label>
+
+          <div class="full">
+            <button class="btn" type="submit">Send</button>
+          </div>
+        </form>
+      </section>
+
+      <!-- FOOTER -->
+      <footer class="footer">
+        <small>© <span id="year"></span> Aldrich Bertram</small>
+      </footer>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
+
