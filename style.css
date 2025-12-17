@@ -244,6 +244,35 @@ a {
   align-items: center;
 }
 
+/* Pixel effect setup */
+  image-rendering: auto;
+  transition:
+    filter 220ms steps(6),
+    transform 220ms ease,
+    box-shadow 220ms ease;
+}
+
+/* Pixel / glitch hover */
+.avatar:hover {
+  filter: contrast(120%) saturate(120%) blur(0.6px);
+  image-rendering: pixelated;
+  transform: translateY(-1px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+}
+
+.avatar:hover {
+  animation: pixel-pop 220ms steps(6);
+}
+
+@keyframes pixel-pop {
+  0% {
+    filter: blur(1.2px) contrast(140%);
+  }
+  100% {
+    filter: blur(0) contrast(120%);
+  }
+}
+
 /* Simple “reveal” animations */
 .reveal {
   opacity: 0;
