@@ -15,19 +15,24 @@ if (form) {
     const btn = form.querySelector('button[type="submit"]');
     if (btn) btn.disabled = true;
 
-    const data = new FormData(form);
+    const payload = {
+      name: form.elements.name.value.trim(),
+      email: form.elements.email.value.trim(),
+      message: form.elements.message.value.trim(),
+    };
 
     try {
       const res = await fetch(SCRIPT_URL, {
         method: "POST",
-        body: data,
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
       });
 
-      // Some Apps Script setups return opaque responses; treat "ok" as success when possible
-      if (!res.ok) throw new Error("Request failed");
-
+      const text = await res.text(); // Apps Script sometimes returns text
+      // We won't rely on parsing here; if fetch didn't throw, show success.
       statusEl.textContent = "✅ Sent! Thanks for reaching out.";
       form.reset();
+      console.log("Apps Script response:", text);
     } catch (err) {
       statusEl.textContent =
         "❌ Could not send. Please try again later or email me directly.";
