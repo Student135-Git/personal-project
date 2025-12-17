@@ -300,3 +300,14 @@ a {
   }
 }
 
+.timeline ul {
+  margin: 6px 0 0;
+  padding-left: 18px;
+  color: var(--muted);
+}
+
+.timeline li {
+  margin-bottom: 6px;
+  line-height: 1.6;
+}
+
