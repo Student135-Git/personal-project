@@ -264,4 +264,43 @@ a {
   padding: 8px 0;
 }
 
+/* ===== Hero Background Image ===== */
+.hero-bg {
+  position: relative;
+  overflow: hidden;
+  border-radius: 18px;
+}
+
+/* Background image layer */
+.hero-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("hero-bg.jpg");
+  background-size: cover;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  opacity: 0.35;
+  z-index: 0;
+}
+
+/* Dark gradient overlay (for text readability) */
+.hero-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(11, 16, 32, 0.88) 0%,
+    rgba(11, 16, 32, 0.65) 50%,
+    rgba(11, 16, 32, 0.45) 100%
+  );
+  z-index: 1;
+}
+
+/* Keep hero content above background */
+.hero-bg > * {
+  position: relative;
+  z-index: 2;
+}
 
