@@ -4,7 +4,7 @@ if (yearEl) yearEl.textContent = new Date().getFullYear();
 
 /* ===== Contact Form → Google Sheets ===== */
 const SCRIPT_URL =
-  "https://script.google.com/macros/s/AKfycby747HpItRUU7b7okupMJ5pOhnL2JLri5vbFrZNFHAwBUsapC6xyroDdfecjCaQ7k5v/exec";
+  "https://script.google.com/macros/s/AKfycbxCSXdOTO-OGZfxEdbrYUY2zSrs03izkYGJGe5b854yE5Noe6QGkq6N6SUyW4Nytw1h/exec";
 
 const form = document.getElementById("contactForm");
 const statusEl = document.getElementById("contactStatus");
