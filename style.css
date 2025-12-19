@@ -443,3 +443,66 @@ a {
   font-size: 12px;
   color: var(--muted);
 }
+
+/* Avatar modal */
+.avatar-wrap {
+  cursor: pointer;
+}
+
+.avatar-modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.avatar-modal.active {
+  display: flex;
+}
+
+.avatar-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(11, 16, 32, 0.9);
+  backdrop-filter: blur(6px);
+}
+
+.avatar-modal-img {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+  border-radius: 16px;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+  animation: avatarZoom 260ms ease;
+  z-index: 1;
+}
+
+.avatar-modal-close {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  background: none;
+  border: none;
+  font-size: 32px;
+  color: #fff;
+  cursor: pointer;
+  z-index: 2;
+  opacity: 0.8;
+}
+
+.avatar-modal-close:hover {
+  opacity: 1;
+}
+
+@keyframes avatarZoom {
+  from {
+    transform: scale(0.92);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
