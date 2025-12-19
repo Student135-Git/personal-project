@@ -1,9 +1,10 @@
-/* ===== Footer Year ===== */
-document.getElementById("year").textContent = new Date().getFullYear();
+/* ===== Footer Year (safe) ===== */
+const yearEl = document.getElementById("year");
+if (yearEl) yearEl.textContent = new Date().getFullYear();
 
 /* ===== Contact Form → Google Sheets ===== */
 const SCRIPT_URL =
-  "https://script.google.com/macros/s/AKfycby747HpItRUU7b7okupMJ5pOhnL2JLri5vbFrZNFHAwBUsapC6xyroDdfecjCaQ7k5v/execc";
+  "https://script.google.com/macros/s/AKfycby747HpItRUU7b7okupMJ5pOhnL2JLri5vbFrZNFHAwBUsapC6xyroDdfecjCaQ7k5v/exec";
 
 const form = document.getElementById("contactForm");
 const statusEl = document.getElementById("contactStatus");
@@ -17,17 +18,17 @@ if (form && statusEl) {
     if (btn) btn.disabled = true;
 
     const payload = {
-      name: form.elements.name.value.trim(),
-      email: form.elements.email.value.trim(),
-      message: form.elements.message.value.trim(),
+      name: form.elements.name?.value?.trim() || "",
+      email: form.elements.email?.value?.trim() || "",
+      message: form.elements.message?.value?.trim() || "",
     };
 
-    
-     await fetch(SCRIPT_URL, {
-  method: "POST",
-  mode: "no-cors",
-  body: new URLSearchParams(payload),
-});
+    try {
+      await fetch(SCRIPT_URL, {
+        method: "POST",
+        mode: "no-cors",
+        body: new URLSearchParams(payload),
+      });
 
       statusEl.textContent = "✅ Sent! Thanks for reaching out.";
       form.reset();
@@ -56,9 +57,8 @@ if (form && statusEl) {
     if (prefersReduced) return;
 
     const finalText = el.dataset.text || el.textContent || "";
-    const charset =
-      el.dataset.charset || "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-    const duration = Number(el.dataset.duration || 5000);
+    const charset = el.dataset.charset || "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+    const duration = Number(el.dataset.duration || 1200);
 
     const start = performance.now();
     el.classList.add("is-shuffling");
@@ -70,18 +70,14 @@ if (form && statusEl) {
       let out = "";
       for (let i = 0; i < finalText.length; i++) {
         const real = finalText[i];
-        if (real === " ") {
-          out += " ";
-          continue;
-        }
-        out += i < lockCount ? real : randChar(charset);
+        if (real === " ") out += " ";
+        else out += i < lockCount ? real : randChar(charset);
       }
 
       el.textContent = out;
 
-      if (t < 1) {
-        requestAnimationFrame(tick);
-      } else {
+      if (t < 1) requestAnimationFrame(tick);
+      else {
         el.textContent = finalText;
         el.classList.remove("is-shuffling");
       }
@@ -90,7 +86,6 @@ if (form && statusEl) {
     requestAnimationFrame(tick);
   };
 
-  // Trigger once on scroll
   const io = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
