@@ -23,12 +23,11 @@ if (form && statusEl) {
     };
 
     try {
-      await fetch(SCRIPT_URL, {
-        method: "POST",
-        mode: "no-cors",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
+     await fetch(SCRIPT_URL, {
+  method: "POST",
+  mode: "no-cors",
+  body: new URLSearchParams(payload),
+});
 
       statusEl.textContent = "✅ Sent! Thanks for reaching out.";
       form.reset();
