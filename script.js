@@ -107,6 +107,7 @@ if (form && statusEl) {
 /* ===== Avatar Modal ===== */
 const avatarThumb = document.getElementById("avatarThumb");
 const avatarModal = document.getElementById("avatarModal");
+const avatarModalClose = document.getElementById("avatarModalClose");
 
 if (avatarThumb && avatarModal) {
   const closeModal = () => {
@@ -119,16 +120,16 @@ if (avatarThumb && avatarModal) {
     avatarModal.setAttribute("aria-hidden", "false");
   });
 
+  if (avatarModalClose) {
+    avatarModalClose.addEventListener("click", closeModal);
+  }
+
   avatarModal.addEventListener("click", (e) => {
-    if (
-      e.target.classList.contains("avatar-modal-backdrop") ||
-      e.target.classList.contains("avatar-modal-close")
-    ) {
-      closeModal();
-    }
+    if (e.target.classList.contains("avatar-modal-backdrop")) closeModal();
   });
 
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") closeModal();
   });
 }
+
