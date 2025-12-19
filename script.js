@@ -103,3 +103,32 @@ if (form && statusEl) {
     el.addEventListener("mouseenter", () => shuffleOnce(el));
   });
 })();
+
+/* ===== Avatar Modal ===== */
+const avatarThumb = document.getElementById("avatarThumb");
+const avatarModal = document.getElementById("avatarModal");
+
+if (avatarThumb && avatarModal) {
+  const closeModal = () => {
+    avatarModal.classList.remove("active");
+    avatarModal.setAttribute("aria-hidden", "true");
+  };
+
+  avatarThumb.addEventListener("click", () => {
+    avatarModal.classList.add("active");
+    avatarModal.setAttribute("aria-hidden", "false");
+  });
+
+  avatarModal.addEventListener("click", (e) => {
+    if (
+      e.target.classList.contains("avatar-modal-backdrop") ||
+      e.target.classList.contains("avatar-modal-close")
+    ) {
+      closeModal();
+    }
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeModal();
+  });
+}
