@@ -3,7 +3,7 @@ document.getElementById("year").textContent = new Date().getFullYear();
 
 /* ===== Contact Form → Google Sheets ===== */
 const SCRIPT_URL =
-  "https://script.google.com/macros/s/AKfycbzRtCZpdpyjzuhp0C2C7mFsfZiXczhBriDxcCiFeo8SCzJd7XvPnSamwkV4M5QmUJ6M/exec";
+  "https://script.google.com/macros/s/AKfycbzciphIlXlBeMZ6k0eVwQutUGFbDnnzeu1rbZGttiwEM4A_myRoRV-5HIZzZN5HXUe3/exec";
 
 const form = document.getElementById("contactForm");
 const statusEl = document.getElementById("contactStatus");
@@ -22,7 +22,7 @@ if (form && statusEl) {
       message: form.elements.message.value.trim(),
     };
 
-    try {
+    
      await fetch(SCRIPT_URL, {
   method: "POST",
   mode: "no-cors",
