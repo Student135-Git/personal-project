@@ -3,7 +3,7 @@ document.getElementById("year").textContent = new Date().getFullYear();
 
 /* ===== Contact Form → Google Sheets ===== */
 const SCRIPT_URL =
-  "https://script.google.com/macros/s/AKfycbzciphIlXlBeMZ6k0eVwQutUGFbDnnzeu1rbZGttiwEM4A_myRoRV-5HIZzZN5HXUe3/exec";
+  "https://script.google.com/macros/s/AKfycby747HpItRUU7b7okupMJ5pOhnL2JLri5vbFrZNFHAwBUsapC6xyroDdfecjCaQ7k5v/execc";
 
 const form = document.getElementById("contactForm");
 const statusEl = document.getElementById("contactStatus");
