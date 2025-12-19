@@ -10,41 +10,45 @@
   <body>
     <main class="container">
       <!-- HERO -->
-     <div class="hero-top">
-  <div class="avatar-wrap">
-    <img
-      class="avatar"
-      id="avatarThumb"
-      src="image/profile.jpg.jpeg"
-      alt="Photo of Aldrich Bertram .T"
-    />
+   <!-- HERO -->
+<header class="hero">
+  <div class="hero-card hero-bg">
+    <div class="hero-top">
+      <div class="avatar-wrap">
+        <img
+          class="avatar"
+          id="avatarThumb"
+          src="image/profile.jpg.jpeg"
+          alt="Photo of Aldrich Bertram .T"
+        />
+      </div>
+
+      <div>
+        <p class="badge">Portfolio</p>
+
+        <h1 class="reveal">
+          <span
+            class="shuffle"
+            data-text="Aldrich Bertram .T"
+            data-charset="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
+            data-duration="1200"
+          >Aldrich Bertram .T</span>
+        </h1>
+
+        <p class="subtitle reveal delay-1">Student • Tzu Chi University</p>
+        <p class="subtitle">Aspiring Web Developer</p>
+      </div>
+    </div>
+
+    <div class="links">
+      <a class="btn" href="https://github.com/Student135-Git" target="_blank" rel="noreferrer">GitHub</a>
+      <a class="btn" href="https://www.linkedin.com/in/aldrich-bertram-tjuwondo-4877a72b2/" target="_blank" rel="noreferrer">LinkedIn</a>
+      <a class="btn" href="mailto:aldrichbt@gmail.com">Email</a>
+      <a class="btn" href="https://drive.google.com/file/d/1MDiUrcrRgYPDYWKMQ6A-Juu4ggc6Szxh/view?usp=sharing" target="_blank" rel="noreferrer">CV</a>
+    </div>
   </div>
+</header>
 
-  <div>
-    <p class="badge">Portfolio</p>
-
-    <h1 class="reveal">
-      <span
-        class="shuffle"
-        data-text="Aldrich Bertram .T"
-        data-charset="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
-        data-duration="1200"
-      >Aldrich Bertram .T</span>
-    </h1>
-
-              <p class="subtitle reveal delay-1">Student • Tzu Chi University</p>
-              <p class="subtitle">Aspiring Web Developer</p>
-            </div>
-          </div>
-
-          <div class="links">
-            <a class="btn" href="https://github.com/Student135-Git" target="_blank" rel="noreferrer">GitHub</a>
-            <a class="btn" href="https://www.linkedin.com/in/aldrich-bertram-tjuwondo-4877a72b2/" target="_blank" rel="noreferrer">LinkedIn</a>
-            <a class="btn" href="mailto:aldrichbt@gmail.com">Email</a>
-            <a class="btn" href="https://drive.google.com/file/d/1MDiUrcrRgYPDYWKMQ6A-Juu4ggc6Szxh/view?usp=sharing">CV</a>
-          </div>
-        </div>
-      </header>
 
       <!-- ABOUT + SKILLS -->
       <section class="grid reveal delay-1">
@@ -226,5 +230,18 @@
     </main>
 
     <script src="script.js"></script>
+    <!-- Avatar Modal -->
+<div class="avatar-modal" id="avatarModal" aria-hidden="true">
+  <div class="avatar-modal-backdrop"></div>
+
+  <img
+    src="image/profile.jpg.jpeg"
+    alt="Aldrich Bertram .T - Professional Photo"
+    class="avatar-modal-img"
+  />
+
+  <button class="avatar-modal-close" id="avatarModalClose" aria-label="Close image">×</button>
+</div>
+
   </body>
 </html>
